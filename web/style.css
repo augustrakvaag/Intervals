@@ -1,0 +1,88 @@
+body {
+    background: rgb(56, 56, 56);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#header {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    height: 10vh;
+    border: 2px solid black;
+    margin: auto;
+    display: block;
+    padding: 10px;
+}
+
+#startInterval {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    height: 85vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#startButton {
+    background-color: rgb(5, 116, 20);
+    width: 20vw;
+    height: 40%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#interval {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    height: 90vh;
+    margin: auto;
+    overflow: auto;
+    display:none;
+}
+
+#tableDiv {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    width: 20vw;
+    height: 95%;
+    display: block;
+    padding: 10px;
+    float: left;
+    font-size: 50px;
+}
+#countdown {
+    background-color: rgb(255, 255, 255);
+    display: inline;
+    color: rgb(0, 0, 0);
+    width: 40vw;
+    height: 95%;
+    display: block;
+    padding: 10px;
+    float: left;
+}
+#targetPower {
+    background-color: rgb(255, 255, 255);
+    display: inline;
+    color: rgb(0, 0, 0);
+    width: 35vw;
+    height: 95%;
+    display: block;
+    padding: 10px;
+    float: left;
+}
+
+h1,h2{
+    text-align: center;
+}
+
+#power,#time{
+    text-align: center;
+    margin-top: 40vh;
+    font-size: 180px;
+}
