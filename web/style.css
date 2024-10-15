@@ -1,5 +1,12 @@
+
+:root {
+    --background: rgb(38,38,38);
+    --text: rgb(255,255,255);
+    --border: rgb(45,45,45)
+}
+
 body {
-    background: rgb(56, 56, 56);
+    background: var(--background);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     height: 100%;
     margin: 0;
@@ -8,18 +15,27 @@ body {
 }
 
 #header {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+    background-color: var(--background);
+    color: var(--text);
     height: 10vh;
-    border: 2px solid black;
+    border: 2px solid var(--border);
     margin: auto;
-    display: block;
+    display: flex;
     padding: 10px;
 }
 
+#title {
+    margin-left: 40vw;
+}
+
+img{
+    float: right;
+    margin-left: auto;
+}
+
 #startInterval {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+    background-color: var(--background);
+    color: var(--text);
     height: 85vh;
     margin: auto;
     display: flex;
@@ -29,6 +45,7 @@ body {
 
 #startButton {
     background-color: rgb(5, 116, 20);
+    color:var(--text);
     width: 20vw;
     height: 40%;
     padding: 10px;
@@ -37,9 +54,22 @@ body {
     justify-content: center;
 }
 
+#startButton:hover {
+    background-color: rgb(4, 78, 14);
+    color:var(--text);
+    width: 20vw;
+    height: 40%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
 #interval {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+    background-color: var(--background);
+    border: 2px solid var(--border);
+    color: var(--text);
     height: 90vh;
     margin: auto;
     overflow: auto;
@@ -47,19 +77,21 @@ body {
 }
 
 #tableDiv {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+    background-color: var(--background);
+    color: var(--text);
+    border: 2px solid var(--border);
     width: 20vw;
     height: 95%;
-    display: block;
+    display: inline;
     padding: 10px;
     float: left;
     font-size: 50px;
 }
 #countdown {
-    background-color: rgb(255, 255, 255);
+    background-color: var(--background);
     display: inline;
-    color: rgb(0, 0, 0);
+    color: var(--text);
+    border: 2px solid var(--border);
     width: 40vw;
     height: 95%;
     display: block;
@@ -67,9 +99,10 @@ body {
     float: left;
 }
 #targetPower {
-    background-color: rgb(255, 255, 255);
+    background-color: var(--background);
     display: inline;
-    color: rgb(0, 0, 0);
+    color: var(--text);
+    border: 2px solid var(--border);
     width: 35vw;
     height: 95%;
     display: block;
@@ -85,4 +118,8 @@ h1,h2{
     text-align: center;
     margin-top: 40vh;
     font-size: 180px;
+}
+
+.even{
+    background-color: rgb(45,45,45);
 }

@@ -36,7 +36,7 @@ function countdown(start) {
         const interval = setInterval(() => {
             timeEl.textContent = timeFormat(currentCount);
             currentCount--;
-            if (currentCount < 1) {
+            if (currentCount < 0) {
                 clearInterval(interval);
                 resolve();
             }
@@ -51,6 +51,9 @@ function createTable(array){
         let trEl = document.createElement("tr");
         let tdEl = document.createElement("td");
         tdEl.textContent = timeFormat(array[i][0]) + " @ " + array[i][1];
+        if(i%2==0){
+            tdEl.classList.add("even");
+        }
         trEl.appendChild(tdEl);
         tdEl = document.createElement("td");
         tdEl.id = "t" + i.toString(); //id will be used to move arrow downward
