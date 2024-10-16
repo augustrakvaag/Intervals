@@ -9,7 +9,7 @@ startButtonEl.addEventListener("click",startInterval);
 
 async function startInterval(){
     startIntervalEl.style.display="none"; //Hides the start button
-    intervalDivEl.style.display="inline"; //Makes the main interval screen visible
+    intervalDivEl.style.display="flex"; //Makes the main interval screen visible
     let intervalList = await getInterval();
     createTable(intervalList);
     main(intervalList);
