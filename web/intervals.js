@@ -4,13 +4,16 @@ let powerEl = document.querySelector("#power");
 let tableEl = document.querySelector("#table");
 let intervalDivEl = document.querySelector("#interval");
 let startIntervalEl = document.querySelector("#startInterval")
+let titleEl = document.querySelector("#title")
 
 startButtonEl.addEventListener("click",startInterval);
 
 async function startInterval(){
     startIntervalEl.style.display="none"; //Hides the start button
     intervalDivEl.style.display="flex"; //Makes the main interval screen visible
-    let intervalList = await getInterval();
+    let intervalAndTitle = await getInterval();
+    let intervalList = intervalAndTitle[1];
+    titleEl.textContent = intervalAndTitle[0];
     createTable(intervalList);
     main(intervalList);
 }

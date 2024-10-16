@@ -11,11 +11,11 @@ def create_intervals():
     with open("sessions/" + filename, 'r') as file:
         for index,line in enumerate(file):
             if index == 0:
-                continue
+                title = line.strip()
             else:
                 line = line.strip()
                 duration_power = line.split(",")
                 interval_set.append(duration_power)
-    return interval_set
+    return [title,interval_set]
 
 eel.start('index.html')
