@@ -3,15 +3,13 @@ import os
 
 eel.init('web')
 
-filename = "3x12.txt"
-
 @eel.expose
 def get_all_intervals():
     return os.listdir("sessions")
 
 
 @eel.expose
-def create_intervals():
+def create_intervals(filename):
     interval_set = []
     with open("sessions/" + filename, 'r') as file:
         for index,line in enumerate(file):

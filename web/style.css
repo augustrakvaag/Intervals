@@ -40,7 +40,39 @@ img {
     background-color: var(--background);
     color: var(--text);
     height: 85vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#select{
+    color:black;
+}
+
+#choose{
+    width: 15vw;
+    height: 10vw;
+    line-height: 10vw;
+    size: 30px;
+    background-color: var(--border);
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#choose:hover {
+    background-color: rgb(50,50,50);
+}
+
+#chooseInterval {
+    background-color: var(--background);
+    color: var(--text);
+    height: 85vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -52,7 +84,7 @@ img {
     width: 20vw;
     height: 40vh;
     padding: 1rem;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     cursor: pointer;

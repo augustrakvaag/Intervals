@@ -3,23 +3,42 @@ let timeEl = document.querySelector("#time");
 let powerEl = document.querySelector("#power");
 let tableEl = document.querySelector("#table");
 let intervalDivEl = document.querySelector("#interval");
-let startIntervalEl = document.querySelector("#startInterval")
-let titleEl = document.querySelector("#title")
+let startIntervalEl = document.querySelector("#startInterval");
+let titleEl = document.querySelector("#title");
+let chooseEl = document.querySelector("#choose");
+let chooseIntervalEl = document.querySelector("#chooseInterval")
 
+let intervalList = [];
+
+chooseEl.addEventListener("click",getInterval)
 startButtonEl.addEventListener("click",startInterval);
+getAllIntervals();
+
+async function getInterval(){
+    chooseIntervalEl.style.display = "none";
+    startIntervalEl.style.display = "flex";
+    let chosenInterval = chooseEl.value;
+    let intervalAndTitle = await eel.create_intervals(chosenInterval)();
+    titleEl.textContent = intervalAndTitle[0];
+    intervalList = intervalAndTitle[1];
+}
 
 async function getAllIntervals(){
-    let allIntervals =await eel.get_all_intervals()();
-    console.log(allIntervals);
+    let allIntervals = await eel.get_all_intervals()();
+    let iterator = allIntervals.values();
+    let selectEl = document.querySelector("#select");
+    for(item of iterator){
+        let op = document.createElement("option");
+        op.value = item;
+        op.textContent = item;
+        selectEl.appendChild(op);
+    }
 }
 
 async function startInterval(){
-    getAllIntervals();
     startIntervalEl.style.display="none"; //Hides the start button
     intervalDivEl.style.display="flex"; //Makes the main interval screen visible
-    let intervalAndTitle = await getInterval();
-    let intervalList = intervalAndTitle[1];
-    titleEl.textContent = intervalAndTitle[0];
+    let intervalAndTitle = await getIntervalList();
     createTable(intervalList);
     main(intervalList);
 }
@@ -32,11 +51,6 @@ async function main(array){
         await countdown(array[i][0]);
         currentArrow.textContent ="";
     }
-}
-
-async function getInterval(){
-    let intervalList = await eel.create_intervals()(); //See intervalcreator.py
-    return intervalList;
 }
 
 function countdown(start) {
