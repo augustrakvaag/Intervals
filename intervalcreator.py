@@ -1,9 +1,14 @@
-import time
 import eel
+import os
 
 eel.init('web')
 
-filename = "5x5.txt"
+filename = "3x12.txt"
+
+@eel.expose
+def get_all_intervals():
+    return os.listdir("sessions")
+
 
 @eel.expose
 def create_intervals():

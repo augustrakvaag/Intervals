@@ -8,7 +8,13 @@ let titleEl = document.querySelector("#title")
 
 startButtonEl.addEventListener("click",startInterval);
 
+async function getAllIntervals(){
+    let allIntervals =await eel.get_all_intervals()();
+    console.log(allIntervals);
+}
+
 async function startInterval(){
+    getAllIntervals();
     startIntervalEl.style.display="none"; //Hides the start button
     intervalDivEl.style.display="flex"; //Makes the main interval screen visible
     let intervalAndTitle = await getInterval();
