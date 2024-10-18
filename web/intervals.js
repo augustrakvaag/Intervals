@@ -6,6 +6,7 @@ let intervalDivEl = document.querySelector("#interval");
 let startIntervalEl = document.querySelector("#startInterval");
 let titleEl = document.querySelector("#title");
 let chooseEl = document.querySelector("#choose");
+let selectEl = document.querySelector("#select")
 let chooseIntervalEl = document.querySelector("#chooseInterval")
 
 let intervalList = [];
@@ -16,8 +17,9 @@ getAllIntervals();
 
 async function getInterval(){
     chooseIntervalEl.style.display = "none";
+    startButtonEl.style.display = "flex";
     startIntervalEl.style.display = "flex";
-    let chosenInterval = chooseEl.value;
+    let chosenInterval = selectEl.value;
     let intervalAndTitle = await eel.create_intervals(chosenInterval)();
     titleEl.textContent = intervalAndTitle[0];
     intervalList = intervalAndTitle[1];
@@ -38,7 +40,6 @@ async function getAllIntervals(){
 async function startInterval(){
     startIntervalEl.style.display="none"; //Hides the start button
     intervalDivEl.style.display="flex"; //Makes the main interval screen visible
-    let intervalAndTitle = await getIntervalList();
     createTable(intervalList);
     main(intervalList);
 }

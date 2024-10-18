@@ -7,7 +7,6 @@ eel.init('web')
 def get_all_intervals():
     return os.listdir("sessions")
 
-
 @eel.expose
 def create_intervals(filename):
     interval_set = []
