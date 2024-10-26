@@ -4,6 +4,7 @@ let powerEl = document.querySelector("#power");
 let tableEl = document.querySelector("#table");
 let intervalDivEl = document.querySelector("#interval");
 let startIntervalEl = document.querySelector("#startInterval");
+let tableDivEl = document.querySelector("#tableDiv");
 let titleEl = document.querySelector("#title");
 let chooseEl = document.querySelector("#choose");
 let selectEl = document.querySelector("#select")
@@ -69,6 +70,9 @@ function countdown(start) {
 }
 
 function createTable(array){
+    if(array.length > 13){
+        tableDivEl.style.fontSize = "2rem";
+    }
     tableEl.innerHTML = "";
     let tbodyEl = document.createElement("tbody");
     for(let i = 0; i<array.length;i++){
