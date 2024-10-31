@@ -70,7 +70,7 @@ function countdown(start) {
 }
 
 function createTable(array){
-    if(array.length > 13){
+    if(array.length > 11){
         tableDivEl.style.fontSize = "2rem";
     }
     tableEl.innerHTML = "";
